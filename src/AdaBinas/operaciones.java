@@ -5,4 +5,5 @@ public class operaciones {
 	/* fffffffffff 
 	 * 
 	 * xd*/
+	int xx=190;
 }
