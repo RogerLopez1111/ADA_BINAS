@@ -26,6 +26,8 @@ public class GUIEmpleados extends JFrame {
 	private JTextField textingreso;
 	private JTextField textsalario;
 	private JTable table;
+	private operaciones lista1 = new operaciones();
+
 
 	/**
 	 * Launch the application.
@@ -55,7 +57,14 @@ public class GUIEmpleados extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+		int kk=0;
+		do {
+			kk++;
+		Empleados nuevo = new Empleados("Nombre"+kk, "apellido"+kk,"Genero"+kk, "nacimiento"+kk,"ingreso"+kk);
+				lista1.insertarAlFinal(nuevo);
+		}
+		while(kk!=4);
+		lista1.imprimeLista();
 		JLabel lblNewLabel = new JLabel("-");
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Lupita\\Documents\\OneDrive - Universidad Autonoma de Yucatan\\Cuarto semestre FCA\\POO\\ADA-BINAS\\Logo ada.png"));
 		lblNewLabel.setBounds(0, 0, 434, 82);
