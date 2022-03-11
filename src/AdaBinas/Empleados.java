@@ -4,19 +4,21 @@ public class Empleados {
 	private String nombre;
 	private String apellido;
 	private String genero;
-	private String nacimiento;
-	private String ingreso;
+	private int nacimiento;
+	private int ingreso;
+	private int salario;
 	 public Empleados siguiente;
 	 public Empleados anterior;
 
 	 
-	public Empleados(String nombre, String apellido, String genero, String nacimiento,String ingreso) {
+	public Empleados(String nombre, String apellido, String genero, int nacimiento,int ingreso, int salario) {
 
 		this.nombre=nombre;
 		this.apellido=apellido;
 		this.genero=genero;
 		this.nacimiento=nacimiento;
 		this.ingreso=ingreso;
+		this.salario=salario;
 
 
 
@@ -26,7 +28,7 @@ public class Empleados {
 		return nombre;
 	}
 
-	public void setIngreso(String ingreso) {
+	public void setIngreso(int ingreso) {
 		this.ingreso = ingreso;
 	}
 
@@ -38,12 +40,17 @@ public class Empleados {
 		return genero;
 	}
 
-	public String getNacimiento() {
+	public int getNacimiento() {
 		return nacimiento;
 	}
 
-	public String getIngreso() {
+	public int getIngreso() {
 		return ingreso;
+	}
+
+	public int getSalario() {
+		
+		return salario;
 	}
 
 	
