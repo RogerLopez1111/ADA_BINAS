@@ -109,13 +109,23 @@ public class GUIEmpleados extends JFrame {
 		JButton btnNewButton = new JButton("Calcular edad");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				lista1.EDAD();
+				String NombBusc= textnombre.getText();
+				String ApeBusc=textapellido.getText();
+				lista1.EDAD(NombBusc, ApeBusc);
 			}
 		});
 		btnNewButton.setBounds(64, 237, 141, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnCalcularAntiguedad = new JButton("Calcular Antiguedad");
+		btnCalcularAntiguedad.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String NombBusc= textnombre.getText();
+				String ApeBusc=textapellido.getText();
+				lista1.ANTIGUEDAD(NombBusc, ApeBusc);
+				
+			}
+		});
 		btnCalcularAntiguedad.setBounds(246, 237, 141, 23);
 		contentPane.add(btnCalcularAntiguedad);
 		
@@ -188,6 +198,11 @@ public class GUIEmpleados extends JFrame {
 		contentPane.add(table);
 		
 		JButton btnNewButton_1 = new JButton("Cambiar empleado");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnNewButton_1.setBounds(167, 283, 103, 19);
 		contentPane.add(btnNewButton_1);
 		
