@@ -188,6 +188,26 @@ public class GUIEmpleados extends JFrame {
 		contentPane.add(table);
 		
 		JButton btnNewButton_1 = new JButton("Cambiar empleado");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String NombBusc=JOptionPane.showInputDialog("Nombre");
+				String ApeBusc=JOptionPane.showInputDialog("Apellido");
+				lista1.irAnodoSiguiente(NombBusc, ApeBusc);
+				String nombre=lista1.actual.getNombre();
+				String apellido=lista1.actual.getApellido();
+				String genero=lista1.actual.getGenero();
+				int nacimiento=lista1.actual.getNacimiento();
+				int ingreso=lista1.actual.getIngreso();
+				int salario=lista1.actual.getSalario();
+				textnombre.setText(nombre);
+				textapellido.setText(apellido);
+				textgenero.setText(genero);
+				textnacimiento.setText(String.valueOf(nacimiento));
+				textingreso.setText(String.valueOf(ingreso));
+				textsalario.setText(String.valueOf(salario));
+
+			}
+		});
 		btnNewButton_1.setBounds(167, 283, 103, 19);
 		contentPane.add(btnNewButton_1);
 		
@@ -212,7 +232,7 @@ public class GUIEmpleados extends JFrame {
 		JButton btnPrint = new JButton("Imprimir");
 		btnPrint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				lista1.imprimeLista();
+				lista1.imprimirLista();
 			}
 		});
 		btnPrint.setBounds(344, 155, 85, 21);

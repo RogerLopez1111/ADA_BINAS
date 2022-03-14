@@ -17,6 +17,7 @@ public class operaciones {
 			ultimo.siguiente = nuevo;
 			ultimo = nuevo; 
 		}
+		 actual =primero;
 	}
 	
 	public void ingresarAlInicio(Empleados nuevo) {
@@ -26,6 +27,7 @@ public class operaciones {
 			nuevo.siguiente = primero;
 			primero = nuevo;
 		}
+		 actual =primero;
 	}
 	
 	public void ingresarEnMedio(Empleados nuevo) {
@@ -40,6 +42,7 @@ public class operaciones {
 			}
 		    aux.siguiente = nuevo;
 			nuevo.siguiente = aux;
+			 actual =primero;
 	}
 	 
 	 public void InsertarOrdenado(Empleados nuevo) {
@@ -68,18 +71,14 @@ public class operaciones {
 	    	   aux=aux.siguiente;
 	       }		
 	}
-	public void imprimeLista() {
-		//inicio el reccorrido de la lista con aux
-				Empleados aux= primero;
-				//verifico si la lista tiene nodos
-				if(primero!= null) {
-					//inicio el recorrido y cada que pase por un nodo lo imprimo
-					do {
-						JOptionPane.showMessageDialog(null, aux.getNombre()+" "+aux.getApellido()+aux.getSalario());
-						aux = aux.siguiente;
-					}while(aux!=null);
-				}		
-	}
+	 public void imprimirLista() {
+			Empleados aux=primero;
+			if(primero!=null) 
+				do {
+					JOptionPane.showMessageDialog(null, aux.getNombre()+"\n"+ aux.getApellido()+"\n"+ aux.getSalario());
+				aux = aux.siguiente;
+			}while(aux!=null);
+		}
 	public void EDAD () {
 		Empleados c = primero;
 		String respuesta = JOptionPane.showInputDialog(null, "¿De quién deseas caulcular?");
@@ -89,4 +88,24 @@ public class operaciones {
 			
 		}
 	}
+	
+	 public Empleados irAnodoSiguiente(String NombBusc, String ApeBusc) {
+		 Empleados aux=primero;
+		 if(actual.siguiente==null){
+			 JOptionPane.showMessageDialog(null, "Ya no hay empleados");
+		     actual = ultimo;
+		 }
+		 else
+			 
+	       while(aux!=null) {
+	    	   if(aux.getNombre().equals(NombBusc) && aux.getApellido().equals(ApeBusc)) {
+	    		  actual=aux;
+
+	    		   }
+	    	   aux=aux.siguiente;
+	       }	
+			 
+		 return actual;
+	 }
+	
 }
