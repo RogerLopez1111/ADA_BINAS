@@ -72,7 +72,25 @@ public class operaciones {
 	       }		
 	}
 
-	
+
+
+	public void EDAD (String nombBusc, String apeBusc) {
+		Empleados aux = primero;
+		 while(aux!=null) {
+	    	   if(aux.getNombre().equals(nombBusc) && aux.getApellido().equals(apeBusc)) {
+	    		   int r =2022-aux.getNacimiento();
+					JOptionPane.showMessageDialog(null, "La edad es " +r +" años");
+
+	    		   }
+	    	   aux=aux.siguiente;
+	       }	
+		
+				
+		
+		
+	}
+
+
 	
 	public void ANTIGUEDAD (String nombBusc, String apeBusc) {
 		Empleados aux = primero;
@@ -96,21 +114,12 @@ public class operaciones {
 				aux = aux.siguiente;
 			}while(aux!=null);
 		}
-	public void EDAD() {
-		Empleados c = primero;
-		String respuesta = JOptionPane.showInputDialog(null, "¿De quién deseas calcular?");
-		if (respuesta.equals(c.getNombre())) {
-			int r =2022-c.getNacimiento();
-			JOptionPane.showMessageDialog(null, "La edad de "+respuesta +" es " +r +" años");
-			
-		}
-	}
-	
+
 	 public Empleados irAnodoSiguiente(String NombBusc, String ApeBusc) {
 		 Empleados aux=primero;
 		 actual=primero;
 		 if(actual.siguiente==null){
-			 JOptionPane.showMessageDialog(null, "Ya no hay empleados");
+			 JOptionPane.showMessageDialog(null, "No hay empleados");
 		     actual = ultimo;
 		 }
 		 else
