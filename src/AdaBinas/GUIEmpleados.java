@@ -142,23 +142,6 @@ public class GUIEmpleados extends JFrame {
 		contentPane.add(btnModificarSalario);
 		
 		textnombre = new JTextField();
-		textnombre.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				String nombre=lista1.ultimo.getNombre();
-				String apellido=lista1.ultimo.getApellido();
-				String genero=lista1.ultimo.getGenero();
-				int nacimiento=lista1.ultimo.getNacimiento();
-				int ingreso=lista1.ultimo.getIngreso();
-				int salario=lista1.ultimo.getSalario();
-				textnombre.setText(nombre);
-				textapellido.setText(apellido);
-				textgenero.setText(genero);
-				textnacimiento.setText(String.valueOf(nacimiento));
-				textingreso.setText(String.valueOf(ingreso));
-				textsalario.setText(String.valueOf(salario));
-			}
-		});
 		textnombre.setBounds(143, 98, 86, 20);
 		contentPane.add(textnombre);
 		textnombre.setColumns(10);
@@ -246,7 +229,7 @@ public class GUIEmpleados extends JFrame {
 		JButton btnPrint = new JButton("Imprimir");
 		btnPrint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				lista1.imprimeLista();
+				lista1.imprimirLista();
 			}
 		});
 		btnPrint.setBounds(344, 155, 85, 21);

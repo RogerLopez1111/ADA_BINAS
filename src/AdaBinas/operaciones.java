@@ -72,33 +72,8 @@ public class operaciones {
 	       }		
 	}
 
-	public void imprimeLista() {
-		//inicio el reccorrido de la lista con aux
-				Empleados aux= primero;
-				//verifico si la lista tiene nodos
-				if(primero!= null) {
-					//inicio el recorrido y cada que pase por un nodo lo imprimo
-					do {
-						JOptionPane.showMessageDialog(null, aux.getNombre()+" "+aux.getApellido() +" "+aux.getSalario());
-						aux = aux.siguiente;
-					}while(aux!=null);
-				}		
-	}
-	public void EDAD (String nombBusc, String apeBusc) {
-		Empleados aux = primero;
-		 while(aux!=null) {
-	    	   if(aux.getNombre().equals(nombBusc) && aux.getApellido().equals(apeBusc)) {
-	    		   int r =2022-aux.getNacimiento();
-					JOptionPane.showMessageDialog(null, "La edad es " +r +" años");
-
-	    		   }
-	    	   aux=aux.siguiente;
-	       }	
-		
-				
-		
-		
-	}
+	
+	
 	public void ANTIGUEDAD (String nombBusc, String apeBusc) {
 		Empleados aux = primero;
 		
@@ -121,7 +96,7 @@ public class operaciones {
 				aux = aux.siguiente;
 			}while(aux!=null);
 		}
-	public void EDAD () {
+	public void EDAD() {
 		Empleados c = primero;
 		String respuesta = JOptionPane.showInputDialog(null, "¿De quién deseas calcular?");
 		if (respuesta.equals(c.getNombre())) {
