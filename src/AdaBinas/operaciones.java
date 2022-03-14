@@ -123,7 +123,7 @@ public class operaciones {
 		}
 	public void EDAD () {
 		Empleados c = primero;
-		String respuesta = JOptionPane.showInputDialog(null, "¿De quién deseas caulcular?");
+		String respuesta = JOptionPane.showInputDialog(null, "¿De quién deseas calcular?");
 		if (respuesta.equals(c.getNombre())) {
 			int r =2022-c.getNacimiento();
 			JOptionPane.showMessageDialog(null, "La edad de "+respuesta +" es " +r +" años");
