@@ -205,7 +205,7 @@ public class GUIEmpleados extends JFrame {
 				textnacimiento.setText(String.valueOf(nacimiento));
 				textingreso.setText(String.valueOf(ingreso));
 				textsalario.setText(String.valueOf(salario));
-
+//a
 			}
 		});
 		btnNewButton_1.setBounds(167, 283, 103, 19);
