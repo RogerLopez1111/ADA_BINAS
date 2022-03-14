@@ -107,6 +107,11 @@ public class GUIEmpleados extends JFrame {
 		contentPane.add(lblNewLabel_2_6);
 		
 		JButton btnNewButton = new JButton("Calcular edad");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				lista1.EDAD();
+			}
+		});
 		btnNewButton.setBounds(64, 237, 141, 23);
 		contentPane.add(btnNewButton);
 		
