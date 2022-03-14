@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
@@ -17,6 +19,10 @@ import javax.swing.JTable;
 import java.awt.Choice;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class GUIEmpleados extends JFrame {
 
@@ -59,15 +65,9 @@ public class GUIEmpleados extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		//agrego empleados
-		int kk=0;
-		do {
-			kk++;
-		Empleados nuevo = new Empleados("Nombre"+kk, "apellido"+kk,"M", 1990+kk,2000+kk,1551+kk);
-				lista1.insertarAlFinal(nuevo);
-		}
-		while(kk!=4);
 		
+	
+			
 		JLabel lblNewLabel = new JLabel("-");
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Lupita\\Documents\\OneDrive - Universidad Autonoma de Yucatan\\Cuarto semestre FCA\\POO\\ADA-BINAS\\Logo ada.png"));
 		lblNewLabel.setBounds(0, 0, 434, 82);
@@ -119,30 +119,23 @@ public class GUIEmpleados extends JFrame {
 		contentPane.add(btnModificarSalario);
 		
 		textnombre = new JTextField();
-		textnombre.addFocusListener(new FocusAdapter() {
+		textnombre.addMouseListener(new MouseAdapter() {
 			@Override
-			public void focusGained(FocusEvent e) {
-				String nombre=lista1.primero.getNombre();
-				String apellido=lista1.primero.getApellido();
-				String genero=lista1.primero.getGenero();
-				int nacimiento=lista1.primero.getNacimiento();
-				int ingreso=lista1.primero.getIngreso();
-				int salario=lista1.primero.getSalario();
+			public void mouseClicked(MouseEvent e) {
+				String nombre=lista1.ultimo.getNombre();
+				String apellido=lista1.ultimo.getApellido();
+				String genero=lista1.ultimo.getGenero();
+				int nacimiento=lista1.ultimo.getNacimiento();
+				int ingreso=lista1.ultimo.getIngreso();
+				int salario=lista1.ultimo.getSalario();
 				textnombre.setText(nombre);
 				textapellido.setText(apellido);
 				textgenero.setText(genero);
 				textnacimiento.setText(String.valueOf(nacimiento));
 				textingreso.setText(String.valueOf(ingreso));
 				textsalario.setText(String.valueOf(salario));
-
-
-
-
-
-
 			}
 		});
-		
 		textnombre.setBounds(143, 98, 86, 20);
 		contentPane.add(textnombre);
 		textnombre.setColumns(10);
@@ -184,5 +177,39 @@ public class GUIEmpleados extends JFrame {
 		JButton btnNewButton_1 = new JButton("Cambiar empleado");
 		btnNewButton_1.setBounds(167, 283, 103, 19);
 		contentPane.add(btnNewButton_1);
+		
+		JButton btnAgregar = new JButton("Agregar");
+		btnAgregar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String nombre= textnombre.getText();
+				String apellido=textapellido.getText();
+				String genero=textgenero.getText();
+				int nacimiento=Integer.valueOf(textnacimiento.getText());
+				int ingreso=Integer.valueOf(textingreso.getText());
+				int salario= Integer.valueOf(textsalario.getText());
+				Empleados nuevo = new Empleados(nombre, apellido, genero,nacimiento,ingreso,salario);
+				lista1.InsertarOrdenado(nuevo);
+				JOptionPane.showMessageDialog(null, "Agregado");
+				limpiacontroles();
+			}
+		});
+		btnAgregar.setBounds(341, 108, 85, 21);
+		contentPane.add(btnAgregar);
+		
+		JButton btnPrint = new JButton("Imprimir");
+		btnPrint.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				lista1.imprimeLista();
+			}
+		});
+		btnPrint.setBounds(344, 155, 85, 21);
+		contentPane.add(btnPrint);
 	}
+	public void limpiacontroles() {
+		textnombre.setText("");
+	textapellido.setText("");
+	textgenero.setText("");
+	textnacimiento.setText("");
+	textingreso.setText("");
+	textsalario.setText("");}
 }
