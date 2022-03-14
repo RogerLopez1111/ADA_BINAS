@@ -136,6 +136,8 @@ public class GUIEmpleados extends JFrame {
 				String ApeBusc=textapellido.getText();
 				int NuevoSal= Integer.valueOf(JOptionPane.showInputDialog("Ingresa el salario nuevo"));
 				lista1.editarLista(NombBusc, ApeBusc, NuevoSal);
+				textsalario.setText(String.valueOf(lista1.actual.getSalario()));
+
 			}
 		});
 		btnModificarSalario.setBounds(115, 212, 116, 18);

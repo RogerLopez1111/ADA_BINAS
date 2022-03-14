@@ -61,15 +61,17 @@ public class operaciones {
 			}
 		}
 	 
-	 public void editarLista(String NombBusc, String ApeBusc, int NuevoSal) {
+	 public Empleados editarLista(String NombBusc, String ApeBusc, int NuevoSal) {
 		  Empleados aux=primero;
 	       while(aux!=null) {
 	    	   if(aux.getNombre().equals(NombBusc) && aux.getApellido().equals(ApeBusc)) {
 	    		   aux.setSalario(NuevoSal);
-
+	    		   actual=aux;
 	    		   }
 	    	   aux=aux.siguiente;
-	       }		
+	       }
+			 return actual;
+
 	}
 
 
