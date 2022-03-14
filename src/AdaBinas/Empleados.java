@@ -24,6 +24,10 @@ public class Empleados {
 
 	}
 
+	public void setSalario(int salario) {
+		this.salario = salario;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}

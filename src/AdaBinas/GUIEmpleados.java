@@ -115,6 +115,14 @@ public class GUIEmpleados extends JFrame {
 		contentPane.add(btnCalcularAntiguedad);
 		
 		JButton btnModificarSalario = new JButton("Modificar salario");
+		btnModificarSalario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String NombBusc= textnombre.getText();
+				String ApeBusc=textapellido.getText();
+				int NuevoSal= Integer.valueOf(JOptionPane.showInputDialog("Ingresa el salario nuevo"));
+				lista1.editarLista(NombBusc, ApeBusc, NuevoSal);
+			}
+		});
 		btnModificarSalario.setBounds(115, 212, 116, 18);
 		contentPane.add(btnModificarSalario);
 		

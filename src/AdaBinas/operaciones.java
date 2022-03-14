@@ -57,7 +57,17 @@ public class operaciones {
 				}
 			}
 		}
-	
+	 
+	 public void editarLista(String NombBusc, String ApeBusc, int NuevoSal) {
+		  Empleados aux=primero;
+	       while(aux!=null) {
+	    	   if(aux.getNombre().equals(NombBusc) && aux.getApellido().equals(ApeBusc)) {
+	    		   aux.setSalario(NuevoSal);
+
+	    		   }
+	    	   aux=aux.siguiente;
+	       }		
+	}
 	public void imprimeLista() {
 		//inicio el reccorrido de la lista con aux
 				Empleados aux= primero;
@@ -65,7 +75,7 @@ public class operaciones {
 				if(primero!= null) {
 					//inicio el recorrido y cada que pase por un nodo lo imprimo
 					do {
-						JOptionPane.showMessageDialog(null, aux.getNombre()+" "+aux.getApellido());
+						JOptionPane.showMessageDialog(null, aux.getNombre()+" "+aux.getApellido()+aux.getSalario());
 						aux = aux.siguiente;
 					}while(aux!=null);
 				}		
