@@ -133,6 +133,7 @@ public class operaciones {
 	
 	 public Empleados irAnodoSiguiente(String NombBusc, String ApeBusc) {
 		 Empleados aux=primero;
+		 actual=primero;
 		 if(actual.siguiente==null){
 			 JOptionPane.showMessageDialog(null, "Ya no hay empleados");
 		     actual = ultimo;
